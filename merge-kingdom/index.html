@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Privacy policy for Merge Kingdom, covering game saves, Game Center, online services and optional rewarded test ads.">
+  <meta name="description" content="Privacy policy for Merge Kingdom, covering game saves, Game Center, online services, rewarded ads and in-app purchases.">
   <title>Merge Kingdom · Privacy Policy</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
@@ -13,12 +13,12 @@
     <header>
       <p class="eyebrow">Merge Kingdom</p>
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: October 20, 2026</p>
+      <p class="updated">Last updated: November 1, 2026</p>
     </header>
     <article>
       <section>
         <h2>About this policy</h2>
-        <p>This policy describes how Merge Kingdom handles information in its current testing version. Merge Kingdom uses Apple Game Center for player identity, Apple iCloud/Game Center saved games for cross-device progress, and Supabase for online game services. Some features require an internet connection and a signed-in Game Center account.</p>
+        <p>This policy describes how Merge Kingdom handles information. Merge Kingdom uses Apple Game Center for player identity, Apple iCloud/Game Center saved games for cross-device progress, and Supabase for online game services. Some features require an internet connection and a signed-in Game Center account.</p>
       </section>
       <section>
         <h2>Information stored on your device</h2>
@@ -28,14 +28,25 @@
         <h2>Online game information</h2>
         <p>To operate online features, the game processes a pseudonymous Game Center player identifier, a temporary signed Game Center verification proof, a linked Supabase account identifier, your chosen profile name and avatar, player level, friend code, friendships, gifts, gift/economy event records and game-session/save timestamps. These records support identity verification, progress continuity, social features, security and prevention of conflicting play sessions on different devices. Your profile and friend code may be visible to players using the social features.</p>
         <p>Apple handles Game Center sign-in. The game verifies Apple's signed proof on the server to associate installations belonging to the same player. Apple stores cloud saved-game data; Supabase stores shared profile, friendship, gift, session and related service records. We do not use Game Center verification proofs as advertising identifiers.</p>
-        <p>Reward-aware versions also store reward source identifiers, amounts, application revisions and a full saved-game recovery checkpoint in Supabase when online rewards are applied. This checkpoint includes the board, resources, progression and other information contained in the game save. It allows recovery after interrupted reward delivery or device changes without granting the same reward twice. Reward records and the latest checkpoint can remain after reinstall or a local progress reset.</p>
+        <p>The game also stores reward source identifiers, amounts, application revisions and a full saved-game recovery checkpoint in Supabase when online rewards are applied. This checkpoint includes the board, resources, progression and other information contained in the game save. It allows recovery after interrupted reward delivery or device changes without granting the same reward twice. Reward records and the latest checkpoint can remain after reinstall or a local progress reset.</p>
       </section>
       <section>
-        <h2>Optional rewarded test ads</h2>
-        <p>The testing version includes Google Mobile Ads and Google's User Messaging Platform (UMP) for optional rewarded test ads. Live ad inventory and real-money purchases are not enabled in this version.</p>
-        <p>Google's SDKs contact Google to determine applicable privacy requirements and, when permitted, load and display test ads. This may involve IP addresses (including use to estimate general location), device/app identifiers and information, diagnostics, and ad interactions. Test ads do not mean that no data is processed.</p>
-        <p>The app updates consent information through UMP and requests ads only when UMP permits it. Any required consent form is presented before an ad request. Settings provides Ad privacy options when required by UMP. The current integration does not request Apple's App Tracking Transparency permission. Ad availability and whether a privacy form appears can vary by region and prior choices.</p>
+        <h2>Progression analytics</h2>
+        <p>The game periodically sends compact progression summaries to Supabase: player level, unlocked and mastered producers, secondary item sets, lifetime orders delivered, onboarding completion, app version and reporting environment. These records are linked to the existing pseudonymous game account so the same player is not counted twice on different devices. They are not anonymous. This reporting does not send profile names, friend codes, Apple IDs, advertising identifiers, board contents, or raw saved games as analytics fields.</p>
+        <p>We use aggregate reports to understand progression and activity and improve the game. The latest summary remains until replaced or the account is deleted. Daily activity records have a 35-day reporting window; older records are cleaned up when that account reports again or the owner explicitly runs maintenance in Supabase. Daily records may remain longer while both are inactive. Analytics is separate from reward verification and does not change your game resources.</p>
+      </section>
+      <section>
+        <h2>Optional rewarded ads</h2>
+        <p>Merge Kingdom offers optional rewarded ads for energy and diamonds through Google Mobile Ads (AdMob) and Google's User Messaging Platform (UMP). Ads are shown only when you choose to watch one. TestFlight and App Review builds show Google test ads.</p>
+        <p>Google's SDKs contact Google to determine applicable privacy requirements and, when permitted, load and display ads. This may involve IP addresses (including use to estimate general location), device and app identifiers and information, diagnostics, performance data and ad interactions.</p>
+        <p>The app updates consent information through UMP and requests ads only when UMP permits it. Any required consent form is presented before the first ad. Before the first ad request, iOS also asks whether Merge Kingdom may track you through Apple's App Tracking Transparency permission. If you allow tracking, Google may use your device's advertising identifier to show personalized ads and measure them across apps and websites owned by other companies. If you decline, ads are still available but are not personalized using that identifier, and rewards are the same either way. You can change this at any time in iOS Settings → Privacy &amp; Security → Tracking, and Settings in the game provides Ad privacy options when required by UMP.</p>
+        <p>To deliver an ad reward, Google sends our server a signed confirmation containing a random reward identifier, the ad placement and the reward amount. We store this confirmation with your pseudonymous game account and a daily count to prevent duplicate or excessive rewards. We do not receive your advertising identifier through this confirmation.</p>
         <p>For details about Google's processing, see <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Google's advertising SDK data disclosures</a> and <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+      </section>
+      <section>
+        <h2>Optional gem purchases</h2>
+        <p>Apple processes optional consumable diamond purchases through its App Store payment sheet. TestFlight and App Review purchases use Apple's sandbox and do not charge real money. The game does not receive your payment-card details.</p>
+        <p>To verify and deliver a purchase, the app sends Apple's signed transaction information to our Supabase verification service. The service checks it with Apple and stores the transaction identifier, product identifier, test/live environment, gem amount and reward-delivery status linked to your game account. A pseudonymous account token associates the Apple transaction with your verified game account. These records and recovery checkpoints prevent duplicate grants and recover interrupted purchases across devices. Unfinished transactions may be retried automatically. Sandbox purchases and saves are kept separate from future public-release purchases and saves.</p>
       </section>
       <section>
         <h2>Notifications and your choices</h2>
@@ -43,21 +54,21 @@
       </section>
       <section>
         <h2>Storage and retention</h2>
-        <p>Local progress and preferences remain on your device until they are reset, removed or replaced through normal game/device functions. Cloud saves and online account/service records are stored separately and can outlast an app uninstall or a local progress reset. Reset Progress is not an account-deletion feature. We do not currently provide an automatic in-app account-deletion control; contact us to discuss access, correction or deletion requests.</p>
+        <p>Local progress and preferences remain on your device until removed or replaced through normal game/device functions. Uninstalling the app alone does not delete online records. Use Settings → Delete Game Account to remove the current game account's kingdom, profile, friendships, gifts and account-linked analytics, and request removal of its cloud and local saves. This does not delete your Apple/Game Center account or another isolated game environment. Local guests can use Delete Guest Progress without contacting online services. Interrupted deletion is retried before the old kingdom can be played again; cloud cleanup may require a connection and the same Game Center/iCloud account.</p>
+        <p>We retain minimum private purchase/refund and anti-replay evidence rather than the deleted kingdom or gameplay history: hashes identifying consumed purchase/reward events and used identity proofs, their environment, reward amount/status and timestamps, plus pseudonymous account/transport and hashed-identity deletion markers. These records prevent old receipts, proofs, transfers or saves from restoring deleted progress or receiving the same reward again, and support refund reconciliation. They are pseudonymous, not anonymous, and are not available in the player directory or analytics reports. We keep this evidence for three years after an account is deleted, which covers Apple's refund window and duplicate-claim disputes, and then delete it. Copies on offline devices are cleared when those devices reconnect and verify deletion; Apple's own storage/backup processing is subject to its policies.</p>
         <p>Apple, Supabase and Google operate their services under their own policies and may process information in countries other than yours. Relevant provider information is available in <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>, <a href="https://supabase.com/privacy">Supabase's Privacy Policy</a> and Google's policy linked above.</p>
       </section>
       <section>
         <h2>Children's privacy</h2>
-        <p>Please contact us if you believe a child has supplied personal information that should be removed. Do not include a child's identity or other personal information in a public GitHub issue. We will review the concern and arrange an appropriate way to discuss it.</p>
+        <p>Merge Kingdom is not directed at children under 13. Please email us if you believe a child has supplied personal information that should be removed, and we will review it.</p>
       </section>
       <section>
         <h2>Contact</h2>
-        <p>Merge Kingdom is published by the developer using the GitHub account <a href="https://github.com/alperrocal">alperrocal</a>. For support, a privacy question, or to request a private way to discuss an account matter, open a request through <a href="https://github.com/alperrocal/app-privacy-policies/issues/new">our support and privacy contact page</a>.</p>
-        <p>GitHub issues are public. Do not post your email address, player/account identifiers, Game Center verification proofs, saved-game files, passwords or other personal information there. Ask for a private contact method first. This is the current contact channel while a dedicated support email is being established.</p>
+        <p>For support, privacy questions or account requests, email <a href="mailto:merge.kingdom.support@gmail.com">merge.kingdom.support@gmail.com</a>. Please do not send passwords or payment details. If a request concerns a specific game account, we may ask for information from the game, such as your friend code, to confirm it is yours.</p>
       </section>
       <section>
         <h2>Policy updates and this website</h2>
-        <p>We may update this policy as the app or its service providers change. The date above identifies the latest revision. The policy will be reviewed before live advertising or real-money purchases are enabled.</p>
+        <p>We may update this policy as the app or its service providers change. The date above identifies the latest revision.</p>
         <p>This policy website is hosted on GitHub Pages. It includes no app analytics, advertising scripts or third-party fonts. GitHub may process technical request information when serving the website; see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's Privacy Statement</a>.</p>
       </section>
     </article>
